@@ -48,7 +48,11 @@
         } catch {
           return;
         }
-        setTimeout(() => { copyButton.classList.remove('is-copied'); }, 1800);
+        setTimeout(() => {
+          copyButton.classList.remove('is-copied');
+          contactPanel.hidden = true;
+          contactButton.setAttribute('aria-expanded', 'false');
+        }, 1000);
       });
     </script>
   </body>
