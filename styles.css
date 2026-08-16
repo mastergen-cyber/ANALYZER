@@ -41,7 +41,7 @@ body {
 
 .image-button {
   display: block;
-  width: min(28vw, 380px);
+  width: min(22vw, 300px);
   transform: translateZ(0);
   transition: transform .2s ease, filter .2s ease;
 }
@@ -79,6 +79,6 @@ body {
   }
 
   .image-button {
-    width: min(70vw, 330px);
+    width: min(58vw, 270px);
   }
 }
