@@ -1,0 +1,67 @@
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; margin: 0; }
+
+body {
+  background: #080604;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  overflow: hidden;
+  background: #100a05 url("assets/hero.png") center top / cover no-repeat;
+}
+
+/* Adds readable space below the supplied header without changing its artwork. */
+.shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 36%, rgb(7 4 2 / 18%) 100%);
+}
+
+.actions {
+  position: absolute;
+  top: clamp(245px, 30vw, 520px);
+  left: clamp(24px, 7vw, 130px);
+  right: clamp(24px, 7vw, 130px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.image-button {
+  display: block;
+  width: min(36vw, 500px);
+  transform: translateZ(0);
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.image-button img { display: block; width: 100%; height: auto; }
+
+.image-button:hover,
+.image-button:focus-visible {
+  filter: brightness(1.16) drop-shadow(0 0 15px rgb(231 150 54 / 55%));
+  transform: scale(1.035);
+  outline: none;
+}
+
+.image-button:focus-visible { border-radius: 999px; box-shadow: 0 0 0 3px #ffd08a; }
+
+@media (max-width: 700px) {
+  .hero { background-size: auto 100%; background-position: 42% top; }
+  .actions {
+    top: clamp(200px, 58vw, 330px);
+    left: 16px;
+    right: 16px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .image-button { width: min(82vw, 400px); }
+}
