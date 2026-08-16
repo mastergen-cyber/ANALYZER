@@ -66,6 +66,7 @@
       const languageCurrentImage = document.querySelector('.language-current-image');
       const languageOptions = document.querySelectorAll('.language-option');
       const languageStatus = document.querySelector('#language-status');
+      const programDescription = document.querySelector('.program-description');
       const videoButton = document.querySelector('.video');
       const videoModal = document.querySelector('.video-modal');
       const videoPlayer = document.querySelector('.video-player');
@@ -74,15 +75,18 @@
       const languages = {
         en: {
           label: 'English', image: 'assets/english.png', htmlLang: 'en', title: 'Mastergen Software',
-          contact: 'Contact', video: 'Open video', menu: 'Choose language'
+          contact: 'Contact', video: 'Open video', menu: 'Choose language',
+          description: 'The MASTERGEN ANALYZER program employs a sophisticated algorithm to determine trends and identify the optimal entry point for a trade. It operates exclusively using market quotes from the live market (excluding OTC). The program remains inactive on weekends (Saturdays and Sundays) when the market is closed; otherwise, it runs 24/5. If you wish to purchase the software or have any questions, please contact us via the email address available by clicking the "Contacts" button.'
         },
         uk: {
           label: 'Українська', image: 'assets/українська.png', htmlLang: 'uk', title: 'Mastergen Software',
-          contact: 'Контакти', video: 'Відкрити відео', menu: 'Вибір мови'
+          contact: 'Контакти', video: 'Відкрити відео', menu: 'Вибір мови',
+          description: 'Програма MASTERGEN ANALYZER використовує складний алгоритм для визначення тенденцій і пошуку оптимальної точки входу в угоду. Вона працює виключно з ринковими котируваннями з реального ринку (за винятком OTC). У вихідні дні — суботу та неділю, коли ринок закритий, програма не працює; в інший час вона працює 24/5. Якщо ви бажаєте придбати програмне забезпечення або маєте запитання, зверніться до нас за адресою електронної пошти, доступною після натискання кнопки «Контакти».'
         },
         ru: {
           label: 'Русский', image: 'assets/русский.png', htmlLang: 'ru', title: 'Mastergen Software',
-          contact: 'Контакты', video: 'Открыть видео', menu: 'Выбор языка'
+          contact: 'Контакты', video: 'Открыть видео', menu: 'Выбор языка',
+          description: 'Программа MASTERGEN ANALYZER использует сложный алгоритм для определения трендов и поиска оптимальной точки входа в сделку. Она работает исключительно с рыночными котировками реального рынка (за исключением OTC). По выходным — в субботу и воскресенье, когда рынок закрыт, программа не работает; в остальное время она работает в режиме 24/5. Если вы хотите приобрести программное обеспечение или у вас есть вопросы, свяжитесь с нами по адресу электронной почты, доступному после нажатия кнопки «Контакты».'
         }
       };
 
@@ -138,6 +142,7 @@
 
         document.documentElement.lang = selected.htmlLang;
         document.title = selected.title;
+        programDescription.textContent = selected.description;
         languageCurrentImage.src = selected.image;
         languageCurrentImage.alt = selected.label;
         languageToggle.setAttribute('aria-label', selected.menu);
