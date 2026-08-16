@@ -53,7 +53,7 @@ body {
 /* CONTACT сдвинута вправо на 60 пикселей */
 .contact {
   position: relative;
-  left: 300px;
+  left: 400px;
 }
 
 .image-button img {
