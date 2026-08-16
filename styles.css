@@ -30,7 +30,7 @@ body {
 
 .actions {
   position: absolute;
-  top: clamp(245px, 20vw, 520px);
+  top: clamp(245px, 10vw, 520px);
   left: clamp(24px, 7vw, 130px);
   right: clamp(24px, 10vw, 130px);
   display: flex;
