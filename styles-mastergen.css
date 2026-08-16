@@ -4,12 +4,20 @@
 
 html, body { min-height: 100%; margin: 0; }
 
-body { background: #080604; }
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #080604;
+}
 
 /* The whole page uses the proportions of the supplied 1680×943 artwork. */
 .hero {
   position: relative;
-  width: 100%;
+  /* Масштабирует весь макет до размеров окна, не обрезая его и не добавляя прокрутку. */
+  width: min(100vw, calc(100svh * 1680 / 943));
   aspect-ratio: 1680 / 943;
   overflow: hidden;
   background: #100a05 url("assets/hero.png") center top / 100% 100% no-repeat;
