@@ -79,6 +79,6 @@ body {
   }
 
   .image-button {
-    width: min(82vw, 400px);
+    width: min(70vw, 330px);
   }
 }
