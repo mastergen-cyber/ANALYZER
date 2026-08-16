@@ -18,9 +18,9 @@
           <section class="contact-panel" id="contact-panel" aria-label="Контактная информация" hidden>
             <img class="email-card" src="assets/contact-email.png" alt="tradeforbin@gmail.com">
             <button class="copy-button" type="button" aria-label="Скопировать адрес электронной почты">
-              <img src="assets/copy.png" alt="Copy">
+              <img class="copy-default" src="assets/copy.png" alt="Copy">
+              <img class="copy-confirmation" src="assets/copied.png" alt="Copied">
             </button>
-            <span class="copy-status" aria-live="polite"></span>
           </section>
         </div>
         <!-- Замените #video на свою ссылку в index.html. -->
@@ -33,7 +33,6 @@
       const contactButton = document.querySelector('.contact');
       const contactPanel = document.querySelector('.contact-panel');
       const copyButton = document.querySelector('.copy-button');
-      const copyStatus = document.querySelector('.copy-status');
       const email = 'tradeforbin@gmail.com';
 
       contactButton.addEventListener('click', () => {
@@ -45,11 +44,11 @@
       copyButton.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(email);
-          copyStatus.textContent = 'COPIED';
+          copyButton.classList.add('is-copied');
         } catch {
-          copyStatus.textContent = email;
+          return;
         }
-        setTimeout(() => { copyStatus.textContent = ''; }, 1800);
+        setTimeout(() => { copyButton.classList.remove('is-copied'); }, 1800);
       });
     </script>
   </body>

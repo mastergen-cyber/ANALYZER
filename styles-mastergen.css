@@ -61,6 +61,9 @@ body { background: #080604; }
 }
 
 .copy-button img { display: block; width: 100%; height: auto; }
+.copy-confirmation { display: none !important; }
+.copy-button.is-copied .copy-default { display: none; }
+.copy-button.is-copied .copy-confirmation { display: block !important; }
 
 .image-button:hover,
 .image-button:focus-visible,
@@ -69,15 +72,4 @@ body { background: #080604; }
   filter: brightness(1.16) drop-shadow(0 0 15px rgb(231 150 54 / 55%));
   transform: scale(1.035);
   outline: none;
-}
-
-.copy-status {
-  position: absolute;
-  inset: auto 0 7% 0;
-  color: #ffd08a;
-  font: bold 4.2cqw Georgia, serif;
-  letter-spacing: .08em;
-  text-align: center;
-  text-shadow: 0 1px 4px #000;
-  pointer-events: none;
 }
