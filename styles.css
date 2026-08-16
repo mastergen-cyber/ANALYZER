@@ -41,7 +41,7 @@ body {
 
 .image-button {
   display: block;
-  width: min(36vw, 500px);
+  width: min(28vw, 380px);
   transform: translateZ(0);
   transition: transform .2s ease, filter .2s ease;
 }
