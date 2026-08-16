@@ -5,20 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mastergen Software">
     <title>Mastergen Software</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-mastergen.css">
   </head>
   <body>
     <main class="hero" aria-label="Mastergen Software">
       <div class="shade"></div>
       <nav class="actions" aria-label="Навигация">
-        <!-- Замените #contact и #video на свои ссылки в index.html. -->
-        <a class="image-button contact" href="#contact" aria-label="Contact">
-          <img src="assets/contact.png" alt="Contact">
-        </a>
+        <div class="contact-wrap">
+          <button class="image-button contact" type="button" aria-expanded="false" aria-controls="contact-panel">
+            <img src="assets/contact.png" alt="Contact">
+          </button>
+          <section class="contact-panel" id="contact-panel" aria-label="Контактная информация" hidden>
+            <img class="email-card" src="assets/contact-email.png" alt="tradeforbin@gmail.com">
+            <button class="copy-button" type="button" aria-label="Скопировать адрес электронной почты">
+              <img src="assets/copy.png" alt="Copy">
+            </button>
+            <span class="copy-status" aria-live="polite"></span>
+          </section>
+        </div>
+        <!-- Замените #video на свою ссылку в index.html. -->
         <a class="image-button video" href="#video" aria-label="Video">
           <img src="assets/video.png" alt="Video">
         </a>
       </nav>
     </main>
+    <script>
+      const contactButton = document.querySelector('.contact');
+      const contactPanel = document.querySelector('.contact-panel');
+      const copyButton = document.querySelector('.copy-button');
+      const copyStatus = document.querySelector('.copy-status');
+      const email = 'tradeforbin@gmail.com';
+
+      contactButton.addEventListener('click', () => {
+        const isOpen = !contactPanel.hidden;
+        contactPanel.hidden = isOpen;
+        contactButton.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      copyButton.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(email);
+          copyStatus.textContent = 'COPIED';
+        } catch {
+          copyStatus.textContent = email;
+        }
+        setTimeout(() => { copyStatus.textContent = ''; }, 1800);
+      });
+    </script>
   </body>
 </html>

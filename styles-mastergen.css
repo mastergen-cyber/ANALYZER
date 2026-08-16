@@ -1,0 +1,83 @@
+:root { color-scheme: dark; }
+
+* { box-sizing: border-box; }
+
+html, body { min-height: 100%; margin: 0; }
+
+body { background: #080604; }
+
+/* The whole page uses the proportions of the supplied 1680×943 artwork. */
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1680 / 943;
+  overflow: hidden;
+  background: #100a05 url("assets/hero.png") center top / 100% 100% no-repeat;
+}
+
+.shade { display: none; }
+
+.actions {
+  position: absolute;
+  top: 53%;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.image-button {
+  display: block;
+  width: 22%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.image-button img { display: block; width: 100%; height: auto; }
+
+/* Position remains proportional to the artwork at every size. */
+.contact-wrap { position: relative; width: 22%; left: 6%; }
+.contact-wrap .contact { width: 100%; }
+
+.contact-panel { position: absolute; z-index: 2; top: 112%; left: 0; width: 100%; }
+.contact-panel[hidden] { display: none; }
+.email-card { display: block; width: 100%; height: auto; }
+
+.copy-button {
+  position: absolute;
+  top: 44%;
+  left: 12%;
+  width: 76%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.copy-button img { display: block; width: 100%; height: auto; }
+
+.image-button:hover,
+.image-button:focus-visible,
+.copy-button:hover,
+.copy-button:focus-visible {
+  filter: brightness(1.16) drop-shadow(0 0 15px rgb(231 150 54 / 55%));
+  transform: scale(1.035);
+  outline: none;
+}
+
+.copy-status {
+  position: absolute;
+  inset: auto 0 7% 0;
+  color: #ffd08a;
+  font: bold 4.2cqw Georgia, serif;
+  letter-spacing: .08em;
+  text-align: center;
+  text-shadow: 0 1px 4px #000;
+  pointer-events: none;
+}
