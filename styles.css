@@ -2,7 +2,10 @@
 
 * { box-sizing: border-box; }
 
-html, body { min-height: 100%; margin: 0; }
+html, body {
+  min-height: 100%;
+  margin: 0;
+}
 
 body {
   background: #080604;
@@ -14,10 +17,10 @@ body {
   isolation: isolate;
   min-height: 100svh;
   overflow: hidden;
-  background: #100a05 url("assets/hero.png") center top / cover no-repeat;
+  background: #100a05 url("assets/hero.png") center top / 100% auto no-repeat;
 }
 
-/* Adds readable space below the supplied header without changing its artwork. */
+/* Затемнение фона под шапкой */
 .shade {
   position: absolute;
   z-index: -1;
@@ -43,7 +46,11 @@ body {
   transition: transform .2s ease, filter .2s ease;
 }
 
-.image-button img { display: block; width: 100%; height: auto; }
+.image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .image-button:hover,
 .image-button:focus-visible {
@@ -52,16 +59,26 @@ body {
   outline: none;
 }
 
-.image-button:focus-visible { border-radius: 999px; box-shadow: 0 0 0 3px #ffd08a; }
+.image-button:focus-visible {
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px #ffd08a;
+}
 
 @media (max-width: 700px) {
-  .hero { background-size: auto 100%; background-position: 42% top; }
+  .hero {
+    background-size: 100% auto;
+    background-position: center top;
+  }
+
   .actions {
-    top: clamp(200px, 58vw, 330px);
+    top: clamp(190px, 55vw, 330px);
     left: 16px;
     right: 16px;
     flex-direction: column;
     gap: 16px;
   }
-  .image-button { width: min(82vw, 400px); }
+
+  .image-button {
+    width: min(82vw, 400px);
+  }
 }
