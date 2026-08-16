@@ -79,6 +79,21 @@ body {
 
 .video { position: absolute; width: 22%; right: 0; }
 
+.program-description {
+  position: absolute;
+  top: 62%;
+  left: 17%;
+  width: 66%;
+  margin: 0;
+  color: #f7c96f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(11px, 1.28vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+  text-shadow: 0 1px 2px #130803, 0 0 10px rgb(209 127 35 / 55%);
+}
+
 .contact-panel { position: absolute; z-index: 2; top: 112%; left: 0; width: 100%; }
 .contact-panel[hidden] { display: none; }
 .email-card { display: block; width: 100%; height: auto; }
