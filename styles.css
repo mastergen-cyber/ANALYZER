@@ -8,52 +8,52 @@
 
 html,
 body {
-  min-height: 100%;
   margin: 0;
+  min-height: 100%;
 }
 
 body {
   background: #080604;
-  font-family: Georgia, "Times New Roman", serif;
 }
 
 .hero {
   position: relative;
-  isolation: isolate;
-  min-height: 100svh;
+  width: 100%;
+  aspect-ratio: 1680 / 943;
   overflow: hidden;
-  background: #100a05 url("assets/hero.png") center top / 100% auto no-repeat;
+  background: #100a05 url("assets/hero.png") center top / 100% 100% no-repeat;
 }
 
 .shade {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 36%, rgb(7 4 2 / 18%) 100%);
+  display: none;
 }
 
 .actions {
   position: absolute;
-  top: clamp(245px, 30vw, 520px);
-  left: clamp(24px, 7vw, 130px);
-  right: clamp(24px, 7vw, 130px);
+
+  /* Положение кнопок относительно изображения-шаблона */
+  top: 53%;
+  left: 7%;
+  right: 7%;
+
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  align-items: center;
 }
 
 .image-button {
   display: block;
-  width: min(22vw, 300px);
-  transform: translateZ(0);
+
+  /* Размер кнопок относительно ширины изображения */
+  width: 22%;
+
   transition: transform .2s ease, filter .2s ease;
 }
 
-/* CONTACT сдвинута вправо на 60 пикселей */
+/* CONTACT сдвинута вправо относительно шаблона */
 .contact {
   position: relative;
-  left: 250px;
+  left: 6%;
 }
 
 .image-button img {
@@ -72,27 +72,4 @@ body {
 .image-button:focus-visible {
   border-radius: 999px;
   box-shadow: 0 0 0 3px #ffd08a;
-}
-
-@media (max-width: 700px) {
-  .hero {
-    background-size: 100% auto;
-    background-position: center top;
-  }
-
-  .actions {
-    top: clamp(190px, 55vw, 330px);
-    left: 16px;
-    right: 16px;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .image-button {
-    width: min(58vw, 270px);
-  }
-
-  .contact {
-    left: 0;
-  }
 }
