@@ -23,11 +23,28 @@
             </button>
           </section>
         </div>
+        <div class="language-wrap">
+          <button class="image-button language-toggle" type="button" aria-expanded="false" aria-controls="language-menu" aria-label="Change language">
+            <img class="language-current-image" src="assets/english.png" alt="English">
+          </button>
+          <div class="language-menu" id="language-menu" aria-label="Выбор языка" hidden>
+            <button class="image-button language-option" type="button" data-language="en">
+              <img src="assets/english.png" alt="English">
+            </button>
+            <button class="image-button language-option" type="button" data-language="uk">
+              <img src="assets/українська.png" alt="Українська">
+            </button>
+            <button class="image-button language-option" type="button" data-language="ru">
+              <img src="assets/русский.png" alt="Русский">
+            </button>
+          </div>
+        </div>
         <button class="image-button video" type="button" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Открыть видео">
           <img src="assets/video.png" alt="Video">
         </button>
       </nav>
     </main>
+    <p class="sr-only" id="language-status" aria-live="polite"></p>
     <section class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Видео" hidden>
       <button class="video-close" type="button" aria-label="Закрыть видео">×</button>
       <!-- Положите свой ролик в assets/video.mp4. -->
@@ -40,16 +57,38 @@
       const contactButton = document.querySelector('.contact');
       const contactPanel = document.querySelector('.contact-panel');
       const copyButton = document.querySelector('.copy-button');
+      const languageWrap = document.querySelector('.language-wrap');
+      const languageToggle = document.querySelector('.language-toggle');
+      const languageMenu = document.querySelector('.language-menu');
+      const languageCurrentImage = document.querySelector('.language-current-image');
+      const languageOptions = document.querySelectorAll('.language-option');
+      const languageStatus = document.querySelector('#language-status');
       const videoButton = document.querySelector('.video');
       const videoModal = document.querySelector('.video-modal');
       const videoPlayer = document.querySelector('.video-player');
       const videoClose = document.querySelector('.video-close');
       const email = 'tradeforbin@gmail.com';
+      const languages = {
+        en: {
+          label: 'English', image: 'assets/english.png', htmlLang: 'en', title: 'Mastergen Software',
+          contact: 'Contact', video: 'Open video', menu: 'Choose language'
+        },
+        uk: {
+          label: 'Українська', image: 'assets/українська.png', htmlLang: 'uk', title: 'Mastergen Software',
+          contact: 'Контакти', video: 'Відкрити відео', menu: 'Вибір мови'
+        },
+        ru: {
+          label: 'Русский', image: 'assets/русский.png', htmlLang: 'ru', title: 'Mastergen Software',
+          contact: 'Контакты', video: 'Открыть видео', menu: 'Выбор языка'
+        }
+      };
 
       contactButton.addEventListener('click', () => {
         const isOpen = !contactPanel.hidden;
         contactPanel.hidden = isOpen;
         contactButton.setAttribute('aria-expanded', String(!isOpen));
+        languageMenu.hidden = true;
+        languageToggle.setAttribute('aria-expanded', 'false');
       });
 
       copyButton.addEventListener('click', async () => {
@@ -84,8 +123,55 @@
       });
 
       document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && !videoModal.hidden) closeVideo();
+        if (event.key !== 'Escape') return;
+        if (!videoModal.hidden) closeVideo();
+        languageMenu.hidden = true;
+        languageToggle.setAttribute('aria-expanded', 'false');
       });
+
+      const setLanguage = (language) => {
+        const selected = languages[language];
+        if (!selected) return;
+
+        document.documentElement.lang = selected.htmlLang;
+        document.title = selected.title;
+        languageCurrentImage.src = selected.image;
+        languageCurrentImage.alt = selected.label;
+        languageToggle.setAttribute('aria-label', selected.menu);
+        contactButton.setAttribute('aria-label', selected.contact);
+        videoButton.setAttribute('aria-label', selected.video);
+        languageMenu.setAttribute('aria-label', selected.menu);
+        languageOptions.forEach((option) => {
+          option.hidden = option.dataset.language === language;
+        });
+        languageStatus.textContent = selected.label;
+        localStorage.setItem('mastergen-language', language);
+      };
+
+      languageToggle.addEventListener('click', () => {
+        const isOpen = !languageMenu.hidden;
+        languageMenu.hidden = isOpen;
+        languageToggle.setAttribute('aria-expanded', String(!isOpen));
+        contactPanel.hidden = true;
+        contactButton.setAttribute('aria-expanded', 'false');
+      });
+
+      languageOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          setLanguage(option.dataset.language);
+          languageMenu.hidden = true;
+          languageToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!languageWrap.contains(event.target)) {
+          languageMenu.hidden = true;
+          languageToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      setLanguage(localStorage.getItem('mastergen-language') || 'en');
     </script>
   </body>
 </html>

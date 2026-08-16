@@ -22,9 +22,7 @@ body { background: #080604; }
   top: 32%;
   left: 7%;
   right: 7%;
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  height: 28%;
 }
 
 .image-button {
@@ -41,8 +39,33 @@ body { background: #080604; }
 .image-button img { display: block; width: 100%; height: auto; }
 
 /* Position remains proportional to the artwork at every size. */
-.contact-wrap { position: relative; width: 22%; left: 24%; }
+.contact-wrap,
+.language-wrap {
+  position: absolute;
+}
+
+.contact-wrap { width: 22%; left: 24%; }
 .contact-wrap .contact { width: 100%; }
+
+.language-wrap { width: 16%; left: 54%; }
+.language-toggle { width: 100%; }
+
+.language-menu {
+  position: absolute;
+  z-index: 3;
+  top: 112%;
+  left: 0;
+  display: grid;
+  width: 100%;
+  gap: 7px;
+  background: transparent;
+}
+
+.language-menu[hidden],
+.language-option[hidden] { display: none; }
+.language-option { width: 100%; }
+
+.video { position: absolute; width: 22%; right: 0; }
 
 .contact-panel { position: absolute; z-index: 2; top: 112%; left: 0; width: 100%; }
 .contact-panel[hidden] { display: none; }
@@ -113,4 +136,16 @@ body { background: #080604; }
   background: #e79636;
   color: #080604;
   outline: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
