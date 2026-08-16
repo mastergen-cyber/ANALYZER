@@ -19,7 +19,7 @@ body { background: #080604; }
 
 .actions {
   position: absolute;
-  top: 53%;
+  top: 32%;
   left: 7%;
   right: 7%;
   display: flex;
@@ -41,7 +41,7 @@ body { background: #080604; }
 .image-button img { display: block; width: 100%; height: auto; }
 
 /* Position remains proportional to the artwork at every size. */
-.contact-wrap { position: relative; width: 22%; left: 6%; }
+.contact-wrap { position: relative; width: 22%; left: 17.86%; }
 .contact-wrap .contact { width: 100%; }
 
 .contact-panel { position: absolute; z-index: 2; top: 112%; left: 0; width: 100%; }
