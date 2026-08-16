@@ -23,16 +23,27 @@
             </button>
           </section>
         </div>
-        <!-- Замените #video на свою ссылку в index.html. -->
-        <a class="image-button video" href="#video" aria-label="Video">
+        <button class="image-button video" type="button" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Открыть видео">
           <img src="assets/video.png" alt="Video">
-        </a>
+        </button>
       </nav>
     </main>
+    <section class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Видео" hidden>
+      <button class="video-close" type="button" aria-label="Закрыть видео">×</button>
+      <!-- Положите свой ролик в assets/video.mp4. -->
+      <video class="video-player" controls playsinline preload="metadata">
+        <source src="assets/video.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+      </video>
+    </section>
     <script>
       const contactButton = document.querySelector('.contact');
       const contactPanel = document.querySelector('.contact-panel');
       const copyButton = document.querySelector('.copy-button');
+      const videoButton = document.querySelector('.video');
+      const videoModal = document.querySelector('.video-modal');
+      const videoPlayer = document.querySelector('.video-player');
+      const videoClose = document.querySelector('.video-close');
       const email = 'tradeforbin@gmail.com';
 
       contactButton.addEventListener('click', () => {
@@ -53,6 +64,27 @@
           contactPanel.hidden = true;
           contactButton.setAttribute('aria-expanded', 'false');
         }, 1000);
+      });
+
+      const closeVideo = () => {
+        videoPlayer.pause();
+        videoModal.hidden = true;
+        videoButton.focus();
+      };
+
+      videoButton.addEventListener('click', () => {
+        videoModal.hidden = false;
+        videoPlayer.play().catch(() => {});
+      });
+
+      videoClose.addEventListener('click', closeVideo);
+
+      videoModal.addEventListener('click', (event) => {
+        if (event.target === videoModal) closeVideo();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !videoModal.hidden) closeVideo();
       });
     </script>
   </body>
