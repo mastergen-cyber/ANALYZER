@@ -97,7 +97,7 @@ body {
 /* Registration button in the lower-left area of the artwork. */
 .signup-button {
   position: absolute;
-  left: 10%;
+  left: 8%;
   bottom: 5%;
   width: 16%;
   padding: 0;
