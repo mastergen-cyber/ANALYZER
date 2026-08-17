@@ -46,6 +46,9 @@
       <p class="program-description">
         The MASTERGEN ANALYZER program employs a sophisticated algorithm to identify market trends and determine the optimal entry point for trades. It operates exclusively based on real market quotes (excluding the OTC segment). The program remains inactive on weekends (Saturday and Sunday) when the market is closed; otherwise, it functions around the clock (24/5). If you wish to purchase the software or have any questions, please contact us via email; the address is available by clicking the "Contacts" button. Additionally, there is an option to trade with the Forex broker Roboforex; I provide a trading robot for the MT4 platform to all my partners completely free of charge—feel free to get in touch.
       </p>
+      <button class="signup-button" type="button" aria-label="Sign up">
+        <img class="signup-image" src="assets/signup.png" alt="Sign up">
+      </button>
     </main>
     <p class="sr-only" id="language-status" aria-live="polite"></p>
     <section class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Видео" hidden>
@@ -70,6 +73,8 @@
       const languageOptions = document.querySelectorAll('.language-option');
       const languageStatus = document.querySelector('#language-status');
       const programDescription = document.querySelector('.program-description');
+      const signupButton = document.querySelector('.signup-button');
+      const signupImage = document.querySelector('.signup-image');
       const videoButton = document.querySelector('.video');
       const videoImage = document.querySelector('.video-image');
       const videoModal = document.querySelector('.video-modal');
@@ -82,6 +87,7 @@
           contact: 'Contact', video: 'Video', menu: 'Choose language',
           contactImage: 'assets/contact.png', videoImage: 'assets/video.png',
           copyImage: 'assets/copy.png', copiedImage: 'assets/copied.png', copy: 'Copy', copied: 'Copied',
+          signupImage: 'assets/signup.png', signup: 'Sign up',
           description: 'The MASTERGEN ANALYZER program employs a sophisticated algorithm to identify market trends and determine the optimal entry point for trades. It operates exclusively based on real market quotes (excluding the OTC segment). The program remains inactive on weekends (Saturday and Sunday) when the market is closed; otherwise, it functions around the clock (24/5). If you wish to purchase the software or have any questions, please contact us via email; the address is available by clicking the "Contacts" button. Additionally, there is an option to trade with the Forex broker Roboforex; I provide a trading robot for the MT4 platform to all my partners completely free of charge—feel free to get in touch.'
         },
         uk: {
@@ -89,6 +95,7 @@
           contact: 'Контакти', video: 'Відео', menu: 'Вибір мови',
           contactImage: 'assets/контакти.png', videoImage: 'assets/відео.png',
           copyImage: 'assets/копіювати.png', copiedImage: 'assets/скопійовано.png', copy: 'Копіювати', copied: 'Скопійовано',
+          signupImage: 'assets/реєстрація.png', signup: 'Реєстрація',
           description: 'Програма MASTERGEN ANALYZER використовує складний алгоритм для виявлення ринкових тенденцій і визначення оптимальної точки входу в угоди. Вона працює виключно на основі котирувань реального ринку (за винятком сегмента OTC). Програма не працює у вихідні — суботу та неділю, коли ринок закритий; в інший час вона функціонує цілодобово в режимі 24/5. Якщо ви бажаєте придбати програмне забезпечення або маєте запитання, зв’яжіться з нами електронною поштою: адресу можна отримати, натиснувши кнопку «Контакти». Крім того, є можливість торгувати з форекс-брокером RoboForex; усім моїм партнерам я безкоштовно надаю торгового робота для платформи MT4 — звертайтеся.'
         },
         ru: {
@@ -96,6 +103,7 @@
           contact: 'Контакты', video: 'Видео', menu: 'Выбор языка',
           contactImage: 'assets/контакты.png', videoImage: 'assets/видео.png',
           copyImage: 'assets/копировать.png', copiedImage: 'assets/скопировано.png', copy: 'Копировать', copied: 'Скопировано',
+          signupImage: 'assets/регистрация.png', signup: 'Регистрация',
           description: 'Программа MASTERGEN ANALYZER использует сложный алгоритм для выявления рыночных тенденций и определения оптимальной точки входа в сделки. Она работает исключительно на основе котировок реального рынка (за исключением сегмента OTC). Программа не работает в выходные — субботу и воскресенье, когда рынок закрыт; в остальное время она функционирует круглосуточно в режиме 24/5. Если вы хотите приобрести программное обеспечение или у вас есть вопросы, свяжитесь с нами по электронной почте: адрес доступен после нажатия кнопки «Контакты». Кроме того, доступна возможность торговать с форекс-брокером RoboForex; всем моим партнёрам я бесплатно предоставляю торгового робота для платформы MT4 — обращайтесь.'
         }
       };
@@ -167,6 +175,9 @@
         copyConfirmationImage.src = selected.copiedImage;
         copyConfirmationImage.alt = selected.copied;
         copyButton.setAttribute('aria-label', selected.copy);
+        signupImage.src = selected.signupImage;
+        signupImage.alt = selected.signup;
+        signupButton.setAttribute('aria-label', selected.signup);
         languageMenu.setAttribute('aria-label', selected.menu);
         languageOptions.forEach((option) => {
           option.hidden = option.dataset.language === language;

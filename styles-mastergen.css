@@ -94,6 +94,21 @@ body {
   text-shadow: 0 1px 2px #130803, 0 0 10px rgb(209 127 35 / 55%);
 }
 
+/* Registration button in the lower-left area of the artwork. */
+.signup-button {
+  position: absolute;
+  left: 7%;
+  bottom: 7%;
+  width: 27%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.signup-button img { display: block; width: 100%; height: auto; }
+
 .contact-panel { position: absolute; z-index: 2; top: 112%; left: 0; width: 100%; }
 .contact-panel[hidden] { display: none; }
 .email-card { display: block; width: 100%; height: auto; }
@@ -118,7 +133,9 @@ body {
 .image-button:hover,
 .image-button:focus-visible,
 .copy-button:hover,
-.copy-button:focus-visible {
+.copy-button:focus-visible,
+.signup-button:hover,
+.signup-button:focus-visible {
   filter: brightness(1.16) drop-shadow(0 0 15px rgb(231 150 54 / 55%));
   transform: scale(1.035);
   outline: none;
