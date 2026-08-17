@@ -13,7 +13,7 @@
       <nav class="actions" aria-label="Навигация">
         <div class="contact-wrap">
           <button class="image-button contact" type="button" aria-expanded="false" aria-controls="contact-panel">
-            <img src="assets/contact.png" alt="Contact">
+            <img class="contact-image" src="assets/contact.png" alt="Contact">
           </button>
           <section class="contact-panel" id="contact-panel" aria-label="Контактная информация" hidden>
             <img class="email-card" src="assets/contact-email.png" alt="tradeforbin@gmail.com">
@@ -40,7 +40,7 @@
           </div>
         </div>
         <button class="image-button video" type="button" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Открыть видео">
-          <img src="assets/video.png" alt="Video">
+          <img class="video-image" src="assets/video.png" alt="Video">
         </button>
       </nav>
       <p class="program-description">
@@ -58,8 +58,11 @@
     </section>
     <script>
       const contactButton = document.querySelector('.contact');
+      const contactImage = document.querySelector('.contact-image');
       const contactPanel = document.querySelector('.contact-panel');
       const copyButton = document.querySelector('.copy-button');
+      const copyDefaultImage = document.querySelector('.copy-default');
+      const copyConfirmationImage = document.querySelector('.copy-confirmation');
       const languageWrap = document.querySelector('.language-wrap');
       const languageToggle = document.querySelector('.language-toggle');
       const languageMenu = document.querySelector('.language-menu');
@@ -68,6 +71,7 @@
       const languageStatus = document.querySelector('#language-status');
       const programDescription = document.querySelector('.program-description');
       const videoButton = document.querySelector('.video');
+      const videoImage = document.querySelector('.video-image');
       const videoModal = document.querySelector('.video-modal');
       const videoPlayer = document.querySelector('.video-player');
       const videoClose = document.querySelector('.video-close');
@@ -76,16 +80,22 @@
         en: {
           label: 'English', image: 'assets/english.png', htmlLang: 'en', title: 'Mastergen Software',
           contact: 'Contact', video: 'Open video', menu: 'Choose language',
+          contactImage: 'assets/contact.png', videoImage: 'assets/video.png',
+          copyImage: 'assets/copy.png', copiedImage: 'assets/copied.png', copy: 'Copy', copied: 'Copied',
           description: 'The MASTERGEN ANALYZER program employs a sophisticated algorithm to determine trends and identify the optimal entry point for a trade. It operates exclusively using market quotes from the live market (excluding OTC). The program remains inactive on weekends (Saturdays and Sundays) when the market is closed; otherwise, it runs 24/5. If you wish to purchase the software or have any questions, please contact us via the email address available by clicking the "Contacts" button.'
         },
         uk: {
           label: 'Українська', image: 'assets/українська.png', htmlLang: 'uk', title: 'Mastergen Software',
           contact: 'Контакти', video: 'Відкрити відео', menu: 'Вибір мови',
+          contactImage: 'assets/contact-uk.png', videoImage: 'assets/video-uk.png',
+          copyImage: 'assets/copy-uk.png', copiedImage: 'assets/copied-uk.png', copy: 'Копіювати', copied: 'Скопійовано',
           description: 'Програма MASTERGEN ANALYZER використовує складний алгоритм для визначення тенденцій і пошуку оптимальної точки входу в угоду. Вона працює виключно з ринковими котируваннями з реального ринку (за винятком OTC). У вихідні дні — суботу та неділю, коли ринок закритий, програма не працює; в інший час вона працює 24/5. Якщо ви бажаєте придбати програмне забезпечення або маєте запитання, зверніться до нас за адресою електронної пошти, доступною після натискання кнопки «Контакти».'
         },
         ru: {
           label: 'Русский', image: 'assets/русский.png', htmlLang: 'ru', title: 'Mastergen Software',
           contact: 'Контакты', video: 'Открыть видео', menu: 'Выбор языка',
+          contactImage: 'assets/contact-ru.png', videoImage: 'assets/video-ru.png',
+          copyImage: 'assets/copy-ru.png', copiedImage: 'assets/copied-ru.png', copy: 'Копировать', copied: 'Скопировано',
           description: 'Программа MASTERGEN ANALYZER использует сложный алгоритм для определения трендов и поиска оптимальной точки входа в сделку. Она работает исключительно с рыночными котировками реального рынка (за исключением OTC). По выходным — в субботу и воскресенье, когда рынок закрыт, программа не работает; в остальное время она работает в режиме 24/5. Если вы хотите приобрести программное обеспечение или у вас есть вопросы, свяжитесь с нами по адресу электронной почты, доступному после нажатия кнопки «Контакты».'
         }
       };
@@ -148,6 +158,15 @@
         languageToggle.setAttribute('aria-label', selected.menu);
         contactButton.setAttribute('aria-label', selected.contact);
         videoButton.setAttribute('aria-label', selected.video);
+        contactImage.src = selected.contactImage;
+        contactImage.alt = selected.contact;
+        videoImage.src = selected.videoImage;
+        videoImage.alt = selected.video;
+        copyDefaultImage.src = selected.copyImage;
+        copyDefaultImage.alt = selected.copy;
+        copyConfirmationImage.src = selected.copiedImage;
+        copyConfirmationImage.alt = selected.copied;
+        copyButton.setAttribute('aria-label', selected.copy);
         languageMenu.setAttribute('aria-label', selected.menu);
         languageOptions.forEach((option) => {
           option.hidden = option.dataset.language === language;
