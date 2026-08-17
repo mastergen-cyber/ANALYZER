@@ -113,7 +113,7 @@ body {
 .signup-modal {
   position: absolute;
   z-index: 11;
-  left: 14%;
+  left: 13.7%;
   bottom: calc(5% + 3.397% + 15px);
   width: 340px;
   height: 400px;
