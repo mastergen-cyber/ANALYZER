@@ -97,9 +97,9 @@ body {
 /* Registration button in the lower-left area of the artwork. */
 .signup-button {
   position: absolute;
-  left: 9.3%;
-  bottom: 5%;
-  width: 16%;
+  left: 156px;
+  bottom: 47px;
+  width: 269px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -113,8 +113,8 @@ body {
 .signup-modal {
   position: absolute;
   z-index: 11;
-  left: 13.6%;
-  bottom: calc(5% + 3.397% + 16px);
+  left: 228px;
+  bottom: 95px;
   width: 340px;
   height: 400px;
   background: url("assets/signup-broker.png") center / 100% 100% no-repeat;
