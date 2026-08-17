@@ -113,8 +113,8 @@ body {
 .signup-modal {
   position: absolute;
   z-index: 11;
-  left: 258px;
-  bottom: 95px;
+  left: 259px;
+  bottom: 100px;
   width: 340px;
   height: 400px;
   background: url("assets/signup-broker.png") center / 100% 100% no-repeat;
