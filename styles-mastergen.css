@@ -86,7 +86,7 @@ body {
   width: 54%;
   margin: 0;
   color: #c9a16e;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, "Times New Roman", serif;
   font-size: clamp(12px, 1.42vw, 25px);
   font-weight: 600;
   line-height: 1.45;
