@@ -51,6 +51,17 @@
       </button>
     </main>
     <p class="sr-only" id="language-status" aria-live="polite"></p>
+    <section class="signup-modal" id="signup-modal" role="dialog" aria-modal="true" aria-label="Регистрация у брокера" hidden>
+      <button class="signup-close" type="button" aria-label="Закрыть окно регистрации">×</button>
+      <div class="broker-buttons">
+        <button class="broker-button" type="button" aria-label="Регистрация в Pocket Option">
+          <img src="assets/pocketoption.png" alt="Pocket Option">
+        </button>
+        <button class="broker-button" type="button" aria-label="Регистрация в RoboForex">
+          <img src="assets/roboforex.png" alt="RoboForex">
+        </button>
+      </div>
+    </section>
     <section class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Видео" hidden>
       <button class="video-close" type="button" aria-label="Закрыть видео">×</button>
       <!-- Положите свой ролик в assets/video.mp4. -->
@@ -75,6 +86,8 @@
       const programDescription = document.querySelector('.program-description');
       const signupButton = document.querySelector('.signup-button');
       const signupImage = document.querySelector('.signup-image');
+      const signupModal = document.querySelector('.signup-modal');
+      const signupClose = document.querySelector('.signup-close');
       const videoButton = document.querySelector('.video');
       const videoImage = document.querySelector('.video-image');
       const videoModal = document.querySelector('.video-modal');
@@ -136,6 +149,18 @@
         videoButton.focus();
       };
 
+      const closeSignup = () => {
+        signupModal.hidden = true;
+        signupButton.focus();
+      };
+
+      signupButton.addEventListener('click', () => {
+        signupModal.hidden = false;
+        signupClose.focus();
+      });
+
+      signupClose.addEventListener('click', closeSignup);
+
       videoButton.addEventListener('click', () => {
         videoModal.hidden = false;
         videoPlayer.play().catch(() => {});
@@ -150,6 +175,7 @@
       document.addEventListener('keydown', (event) => {
         if (event.key !== 'Escape') return;
         if (!videoModal.hidden) closeVideo();
+        if (!signupModal.hidden) closeSignup();
         languageMenu.hidden = true;
         languageToggle.setAttribute('aria-expanded', 'false');
       });
