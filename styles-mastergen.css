@@ -111,13 +111,12 @@ body {
 
 /* Broker registration panel shown above the site. */
 .signup-modal {
-  position: fixed;
+  position: absolute;
   z-index: 11;
-  top: 80px;
-  left: 10%;
+  left: 9.3%;
+  bottom: calc(5% + 3.397% + 8px);
   width: 340px;
   height: 400px;
-  transform: none;
   background: url("assets/signup-broker.png") center / 100% 100% no-repeat;
   box-shadow: 0 12px 36px rgb(0 0 0 / 55%);
 }
