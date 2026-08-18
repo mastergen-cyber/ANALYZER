@@ -121,7 +121,7 @@ body {
   z-index: 11;
   container-type: inline-size;
   left: 50%;
-  bottom: calc(100% + 24%);
+  bottom: calc(100% + 28%);
   width: 126.394%;
   aspect-ratio: 17 / 20;
   height: auto;
