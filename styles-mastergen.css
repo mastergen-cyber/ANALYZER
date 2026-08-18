@@ -115,7 +115,8 @@ body {
   position: absolute;
   z-index: 11;
   container-type: inline-size;
-  left: 15.417%;
+  /* Центр окна совпадает с центром кнопки; снизу остаётся небольшой зазор. */
+  left: 7.173%;
   bottom: 10.605%;
   width: 20.238%;
   height: 42.418%;
