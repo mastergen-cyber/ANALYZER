@@ -94,13 +94,18 @@ body {
   text-shadow: 0 1px 2px #130803, 0 0 10px rgb(209 127 35 / 55%);
 }
 
-/* Registration button in the lower-left area of the artwork. */
-.signup-button {
+/* Registration controls share a wrapper, so the panel always follows its button. */
+.signup-wrap {
   position: absolute;
-  /* Values are relative to the 1680×943 artwork, like the other controls. */
   left: 9.286%;
   bottom: 4.984%;
   width: 16.012%;
+  aspect-ratio: 1215 / 258;
+}
+
+.signup-button {
+  display: block;
+  width: 100%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -115,11 +120,12 @@ body {
   position: absolute;
   z-index: 11;
   container-type: inline-size;
-  /* Центр окна совпадает с центром кнопки; снизу остаётся небольшой зазор. */
-  left: 7.173%;
-  bottom: 10.605%;
-  width: 20.238%;
-  height: 42.418%;
+  left: 50%;
+  bottom: calc(100% + 12%);
+  width: 126.394%;
+  aspect-ratio: 17 / 20;
+  height: auto;
+  transform: translateX(-50%);
   background: url("assets/signup-broker.png") center / 100% 100% no-repeat;
   box-shadow: 0 12px 36px rgb(0 0 0 / 55%);
 }
