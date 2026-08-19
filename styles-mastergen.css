@@ -322,7 +322,7 @@ body {
     /* Изменяйте это значение, чтобы двигать описание выше или ниже. */
     margin: 9vw 0; /* верх и низ текста */
     /* Текст также можно двигать независимо: --description-y: 10px; */
-    --description-y: 30px;
+    --description-y: 50px;
     transform: translateY(var(--description-y));
     font-size: clamp(16px, 4.5vw, 21px);
     line-height: 1.5;
