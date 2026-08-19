@@ -57,7 +57,7 @@ body {
 
 .language-wrap {
   width: 25.5%;
-  left: 50%;
+  left: 49%;
   top: 0%; /* Увеличьте значение, чтобы сдвинуть кнопку ниже. */
 }
 .language-toggle { width: 100%; }
