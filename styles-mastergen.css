@@ -267,6 +267,17 @@ body {
 
 /* Mobile layout: applies only to screens up to 768px wide. */
 @media (max-width: 768px) {
+  /* Убирает стандартную голубую вспышку браузера при касании,
+     не меняя заданную подсветку самих кнопок. */
+  .image-button,
+  .signup-button,
+  .copy-button,
+  .broker-button,
+  .signup-close,
+  .video-close {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   body {
     display: block;
     overflow-x: hidden;
