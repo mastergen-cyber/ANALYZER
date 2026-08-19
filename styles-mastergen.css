@@ -299,7 +299,7 @@ body {
     right: auto;
     bottom: auto;
     left: auto;
-    width: 76%;
+    width: 70%;
   }
 
   /* Кнопка выбора языка. Меняйте только --language-y.
@@ -308,7 +308,7 @@ body {
     order: 1;
     margin-top: 0;
     margin-bottom: 0;
-    --language-y: 5px;
+    --language-y: 8px;
     transform: translateY(var(--language-y));
   }
   .program-description { order: 2; }
