@@ -56,7 +56,7 @@ body {
 .contact-wrap .contact { width: 100%; }
 
 .language-wrap {
-  width: 25.5%;
+  width: 22%;
   left: 49%;
   top: 0%; /* Увеличьте значение, чтобы сдвинуть кнопку ниже. */
 }
