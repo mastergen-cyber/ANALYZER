@@ -347,7 +347,7 @@ body {
     margin-top: 0;
     margin-bottom: 9vw;
     /* Кнопка «Видео»: меняйте только --video-y. */
-    --video-y: 35px;
+    --video-y: 45px;
     transform: translateY(var(--video-y));
   }
 
