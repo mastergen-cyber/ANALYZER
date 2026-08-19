@@ -302,11 +302,14 @@ body {
     width: 76%;
   }
 
-  /* Кнопка выбора языка: margin-top больше — ниже, меньше — выше. */
+  /* Кнопка выбора языка. Меняйте только --language-y.
+     Положительное значение (например 20px или 5vw) — ниже, отрицательное — выше. */
   .language-wrap {
     order: 1;
-    margin-top:  5vw;
+    margin-top: 0;
     margin-bottom: 0;
+    --language-y: 0px;
+    transform: translateY(var(--language-y));
   }
   .program-description { order: 2; }
   .video { order: 3; }
@@ -318,6 +321,9 @@ body {
     width: 84%;
     /* Изменяйте это значение, чтобы двигать описание выше или ниже. */
     margin: 9vw 0; /* верх и низ текста */
+    /* Текст также можно двигать независимо: --description-y: 10px; */
+    --description-y: 0px;
+    transform: translateY(var(--description-y));
     font-size: clamp(16px, 4.5vw, 21px);
     line-height: 1.5;
     text-align: center;
@@ -329,8 +335,10 @@ body {
     bottom: auto;
     width: 76%;
     /* Изменяйте это значение, чтобы двигать кнопку регистрации выше или ниже. */
-    margin: 45vw 0 9vw; /* верх и низ кнопки «Регистрация» */
-    transform: none;
+    margin: 9vw 0; /* верх и низ кнопки «Регистрация» */
+    /* Кнопка «Регистрация»: меняйте только --signup-y. */
+    --signup-y: 0px;
+    transform: translateY(var(--signup-y));
   }
 
   /* Меняйте margin-bottom, чтобы двигать следующую кнопку ниже или выше. */
@@ -338,12 +346,18 @@ body {
   .video {
     margin-top: 0;
     margin-bottom: 9vw;
+    /* Кнопка «Видео»: меняйте только --video-y. */
+    --video-y: 0px;
+    transform: translateY(var(--video-y));
   }
 
   /* Кнопка «Контакты». */
   .contact-wrap {
     margin-top: 0;
     margin-bottom: 7vw;
+    /* Кнопка «Контакты»: меняйте только --contact-y. */
+    --contact-y: 0px;
+    transform: translateY(var(--contact-y));
   }
 
   .contact-panel {
