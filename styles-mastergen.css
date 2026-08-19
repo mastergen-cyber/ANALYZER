@@ -265,6 +265,17 @@ body {
   border: 0;
 }
 
+/* Только для компьютера: длинный текст прокручивается внутри своего блока. */
+@media (min-width: 769px) {
+  .program-description {
+    max-height: 42%;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #c9a16e transparent;
+  }
+}
+
 /* Mobile layout: applies only to screens up to 768px wide. */
 @media (max-width: 768px) {
   /* Убирает стандартную голубую вспышку браузера при касании,
