@@ -309,7 +309,7 @@ body {
     order: 1;
     margin-top: 0;
     margin-bottom: 0;
-    --language-y: 0px;
+    --language-y: 8px;
     transform: translateY(var(--language-y));
   }
   .program-description { order: 2; }
