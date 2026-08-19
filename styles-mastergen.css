@@ -283,10 +283,10 @@ body {
     aspect-ratio: auto;
     overflow: visible;
     padding: 31vw 0 9vw;
-    background-image: url("assets/heromobile.png");
-    background-size: 100% auto;
-    background-position: center top;
-    background-repeat: repeat-y;
+    background-image: url("assets/heromobile.png"), url("assets/heromobile2.png");
+    background-size: 100% auto, 100% auto;
+    background-position: center top, center top;
+    background-repeat: no-repeat, repeat-y;
   }
 
   .actions { display: contents; }
