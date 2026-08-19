@@ -270,7 +270,7 @@ body {
   .program-description {
     max-height: 42%;
     overflow-y: auto;
-    padding-right: 35px;
+    padding-right: 45px;
     scrollbar-width: thin;
     scrollbar-color: #c9a16e transparent;
   }
