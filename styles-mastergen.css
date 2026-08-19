@@ -58,7 +58,7 @@ body {
 .language-wrap {
   width: 22%;
   left: 51%;
-  top: 3%; /* Увеличьте значение, чтобы сдвинуть кнопку ниже. */
+  top: 0%; /* Увеличьте значение, чтобы сдвинуть кнопку ниже. */
 }
 .language-toggle { width: 100%; }
 
@@ -305,7 +305,7 @@ body {
   /* Кнопка выбора языка: margin-top больше — ниже, меньше — выше. */
   .language-wrap {
     order: 1;
-    margin-top: 0;
+    margin-top: 3;
     margin-bottom: 0;
   }
   .program-description { order: 2; }
