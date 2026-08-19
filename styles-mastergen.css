@@ -327,7 +327,7 @@ body {
     transform: translateY(var(--description-y));
     font-size: clamp(16px, 4.5vw, 21px);
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
   }
 
   .signup-wrap {
