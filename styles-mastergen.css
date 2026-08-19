@@ -337,7 +337,7 @@ body {
     /* Изменяйте это значение, чтобы двигать кнопку регистрации выше или ниже. */
     margin: 9vw 0; /* верх и низ кнопки «Регистрация» */
     /* Кнопка «Регистрация»: меняйте только --signup-y. */
-    --signup-y: 20px;
+    --signup-y: 25px;
     transform: translateY(var(--signup-y));
   }
 
@@ -347,7 +347,7 @@ body {
     margin-top: 0;
     margin-bottom: 9vw;
     /* Кнопка «Видео»: меняйте только --video-y. */
-    --video-y: 20px;
+    --video-y: 35px;
     transform: translateY(var(--video-y));
   }
 
