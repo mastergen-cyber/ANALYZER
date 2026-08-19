@@ -336,7 +336,7 @@ body {
     /* Текст также можно двигать независимо: --description-y: 10px; */
     --description-y: 95px;
     transform: translateY(var(--description-y));
-    font-size: clamp(16px, 4.5vw, 21px);
+    font-size: clamp(16px, 4.5vw, 24px);
     line-height: 1.5;
     text-align: left;
   }
