@@ -371,17 +371,17 @@ body {
   /* Раскрывающиеся кнопки языков: каждая перемещается независимо.
      Большее значение — ниже, отрицательное — выше. */
   .language-option:nth-child(1) {
-    --english-y: 0px;
+    --english-y: 2px;
     transform: translateY(var(--english-y));
   }
 
   .language-option:nth-child(2) {
-    --ukrainian-y: 0px;
+    --ukrainian-y: 4px;
     transform: translateY(var(--ukrainian-y));
   }
 
   .language-option:nth-child(3) {
-    --russian-y: 0px;
+    --russian-y: 2px;
     transform: translateY(var(--russian-y));
   }
   .video-modal { padding: 16px; }
