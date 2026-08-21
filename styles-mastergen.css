@@ -77,7 +77,17 @@ body {
 .language-option[hidden] { display: none; }
 .language-option { width: 100%; }
 
-.video { position: absolute; width: 22%; right: 0; }
+/* Кнопка «Видео» и окно выбора ролика объединены, поэтому окно всегда
+   остаётся по центру относительно кнопки. */
+.video-wrap {
+  position: absolute;
+  right: 0;
+  width: 22%;
+  --video-button-x: 0px;
+  --video-button-y: 0px;
+  transform: translate(var(--video-button-x), var(--video-button-y));
+}
+.video { width: 100%; }
 
 .program-description {
   position: absolute;
@@ -213,6 +223,80 @@ body {
 }
 
 .video-modal {
+  position: absolute;
+  z-index: 11;
+  container-type: inline-size;
+  left: calc(50% + var(--video-window-x, 0px));
+  bottom: calc(100% + 14% + var(--video-window-y, 0px));
+  width: 126.394%;
+  aspect-ratio: 17 / 21;
+  transform: translateX(-50%);
+  background: url("assets/signup-broker.png") center / 100% 100% no-repeat;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 55%);
+  --video-window-x: 0px;
+  --video-window-y: 0px;
+}
+
+.video-modal[hidden] { display: none; }
+
+.video-buttons {
+  position: absolute;
+  top: 32%;
+  left: 7.059%;
+  right: 7.059%;
+  display: grid;
+  gap: 20%;
+  /* Координаты двух кнопок в окне видео. Положительное значение опускает. */
+  --video-pocketoption-y: 0px;
+  --video-roboforex-y: 0px;
+}
+
+.video-choice {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.video-choice img { display: block; width: 100%; height: auto; }
+.video-choice { position: relative; }
+.video-choice:nth-child(1) { top: var(--video-pocketoption-y); }
+.video-choice:nth-child(2) { top: var(--video-roboforex-y); }
+
+.video-close {
+  position: absolute;
+  top: calc(2.5% + var(--video-close-y, 0px));
+  right: calc(3.529% - var(--video-close-x, 0px));
+  z-index: 1;
+  width: 8.235%;
+  aspect-ratio: 1;
+  height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(4 13 28 / 68%);
+  color: #dce8f6;
+  cursor: pointer;
+  font: 7.059cqi/1 Arial, sans-serif;
+  /* Координаты крестика в окне выбора видео. */
+  --video-close-x: 0px;
+  --video-close-y: 0px;
+}
+
+.video-choice:hover,
+.video-choice:focus-visible,
+.video-close:hover,
+.video-close:focus-visible {
+  filter: brightness(1.15) drop-shadow(0 0 10px rgb(112 181 255 / 55%));
+  outline: none;
+}
+
+.video-choice:hover,
+.video-choice:focus-visible { transform: scale(1.03); }
+
+.video-player-modal {
   position: fixed;
   z-index: 10;
   inset: 0;
@@ -222,7 +306,7 @@ body {
   background: rgb(0 0 0 / 82%);
 }
 
-.video-modal[hidden] { display: none; }
+.video-player-modal[hidden] { display: none; }
 
 .video-player {
   display: block;
@@ -232,7 +316,7 @@ body {
   box-shadow: 0 0 36px rgb(231 150 54 / 38%);
 }
 
-.video-close {
+.video-player-close {
   position: fixed;
   top: 16px;
   right: 22px;
@@ -246,8 +330,8 @@ body {
   font: 32px/1 Arial, sans-serif;
 }
 
-.video-close:hover,
-.video-close:focus-visible {
+.video-player-close:hover,
+.video-player-close:focus-visible {
   background: #e79636;
   color: #080604;
   outline: none;
@@ -285,7 +369,8 @@ body {
   .copy-button,
   .broker-button,
   .signup-close,
-  .video-close {
+  .video-close,
+  .video-player-close {
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -315,7 +400,7 @@ body {
 
   .contact-wrap,
   .language-wrap,
-  .video {
+  .video-wrap {
     position: relative;
     top: auto;
     right: auto;
@@ -335,7 +420,7 @@ body {
     transform: translateY(var(--language-y));
   }
   .program-description { order: 2; }
-  .video { order: 3; }
+  .video-wrap { order: 3; }
   .signup-wrap { order: 4; }
   .contact-wrap { order: 5; }
 
@@ -366,7 +451,7 @@ body {
 
   /* Меняйте margin-bottom, чтобы двигать следующую кнопку ниже или выше. */
   /* Кнопка «Видео». */
-  .video {
+  .video-wrap {
     /* Размер только кнопки «Видео». */
     width: 76%;
     margin-top: 0;
@@ -375,6 +460,7 @@ body {
     --video-y: 90px;
     transform: translateY(var(--video-y));
   }
+  .video { width: 100%; }
 
   /* Кнопка «Контакты». */
   .contact-wrap {
@@ -411,6 +497,6 @@ body {
     --russian-y: 2px;
     transform: translateY(var(--russian-y));
   }
-  .video-modal { padding: 16px; }
-  .video-close { top: 10px; right: 12px; }
+  .video-player-modal { padding: 16px; }
+  .video-player-close { top: 10px; right: 12px; }
 }
