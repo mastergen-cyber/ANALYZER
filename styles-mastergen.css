@@ -97,7 +97,7 @@ body {
      x: вправо/влево, y: вниз/вверх, width и height: размер кнопки. */
   --download-x: 24px;
   --download-y: 0px;
-  --download-width: 14%;
+  --download-width: 16%;
   --download-height: auto;
   position: absolute;
   top: calc(50% + var(--download-y));
