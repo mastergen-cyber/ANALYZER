@@ -85,6 +85,7 @@
     </section>
     <script>
       const contactButton = document.querySelector('.contact');
+      const contactWrap = document.querySelector('.contact-wrap');
       const contactImage = document.querySelector('.contact-image');
       const contactPanel = document.querySelector('.contact-panel');
       const copyButton = document.querySelector('.copy-button');
@@ -102,6 +103,7 @@
       const signupModal = document.querySelector('.signup-modal');
       const signupClose = document.querySelector('.signup-close');
       const videoButton = document.querySelector('.video');
+      const videoWrap = document.querySelector('.video-wrap');
       const videoImage = document.querySelector('.video-image');
       const videoModal = document.querySelector('.video-modal');
       const videoChoices = document.querySelectorAll('.video-choice');
@@ -186,9 +188,10 @@
       signupClose.addEventListener('click', closeSignup);
 
       videoButton.addEventListener('click', () => {
-        videoModal.hidden = false;
-        videoButton.setAttribute('aria-expanded', 'true');
-        videoClose.focus();
+        const isOpen = !videoModal.hidden;
+        videoModal.hidden = isOpen;
+        videoButton.setAttribute('aria-expanded', String(!isOpen));
+        if (!isOpen) videoChoices[0].focus();
       });
 
       videoClose.addEventListener('click', closeVideo);
@@ -274,6 +277,16 @@
         if (!languageWrap.contains(event.target)) {
           languageMenu.hidden = true;
           languageToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        /* Клик по пустому месту закрывает раскрытые окна контактов и видео. */
+        if (!contactWrap.contains(event.target)) {
+          contactPanel.hidden = true;
+          contactButton.setAttribute('aria-expanded', 'false');
+        }
+        if (!videoWrap.contains(event.target)) {
+          videoModal.hidden = true;
+          videoButton.setAttribute('aria-expanded', 'false');
         }
       });
 
