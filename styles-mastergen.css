@@ -247,17 +247,15 @@ body {
    Проценты сохраняют эти пропорции на меньших компьютерных экранах. */
 .download-modal {
   /* Настройки окна Download.
-     x/y: смещение вправо/вниз; width/height: размер окна. */
+     x/y: смещение вправо/вниз; width: размер с сохранением пропорций. */
   --download-modal-x: 0px;
   --download-modal-y: -10px;
   --download-modal-width: 56.25%;
-  --download-modal-height: 48%;
   position: absolute;
   z-index: 12;
   left: calc(60% + var(--download-modal-x));
   top: calc(48% + var(--download-modal-y));
   width: var(--download-modal-width);
-  height: var(--download-modal-height);
   aspect-ratio: 945 / 430;
   transform: translateX(-50%);
   background: url("assets/skindownload.png") center / 100% 100% no-repeat;
@@ -280,24 +278,20 @@ body {
   --download-3000-x: 0px;
   --download-3000-y: 0px;
   --download-3000-width: 42%;
-  --download-3000-height: auto;
   top: calc(10% + var(--download-3000-y));
   right: calc(4% - var(--download-3000-x));
   width: var(--download-3000-width);
 }
-.download-3000 img { height: var(--download-3000-height); }
 
 /* Левая нижняя кнопка: x — вправо, y — вниз. */
 .download-analyzer {
   --download-analyzer-x: 0px;
   --download-analyzer-y: 0px;
   --download-analyzer-width: 42%;
-  --download-analyzer-height: auto;
   bottom: calc(10% - var(--download-analyzer-y));
   left: calc(4% + var(--download-analyzer-x));
   width: var(--download-analyzer-width);
 }
-.download-analyzer img { height: var(--download-analyzer-height); }
 
 .download-choice:hover,
 .download-choice:focus-visible {
