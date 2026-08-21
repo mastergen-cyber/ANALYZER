@@ -263,8 +263,14 @@ body {
 
 .video-choice img { display: block; width: 100%; height: auto; }
 .video-choice { position: relative; }
-.video-choice:nth-child(1) { top: var(--video-pocketoption-y); }
-.video-choice:nth-child(2) { top: var(--video-roboforex-y); }
+.video-choice:nth-child(1) {
+  top: var(--video-pocketoption-y);
+  width: var(--video-pocketoption-width, 100%);
+}
+.video-choice:nth-child(2) {
+  top: var(--video-roboforex-y);
+  width: var(--video-roboforex-width, 100%);
+}
 
 .video-close {
   position: absolute;
@@ -364,6 +370,16 @@ body {
   }
 
   .video-close { display: none; }
+
+  /* Кнопки выбора видео — только компьютерная версия.
+     y: положительное число опускает кнопку, отрицательное — поднимает.
+     width: размер каждой кнопки независимо друг от друга. */
+  .video-buttons {
+    --video-pocketoption-y: 0px;
+    --video-roboforex-y: 0px;
+    --video-pocketoption-width: 100%;
+    --video-roboforex-width: 100%;
+  }
 
   .program-description {
     max-height: 42%;
