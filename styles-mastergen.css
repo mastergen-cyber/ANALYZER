@@ -94,7 +94,7 @@ body {
    и привязана к её правому краю. */
 .download {
   position: absolute;
-  top: calc(50% + var(--download-y, 14px));
+  top: calc(50% + var(--download-y, 20px));
   left: calc(102% + var(--download-x, 0px));
   width: var(--download-width, 14%);
   transform: translateY(-50%);
