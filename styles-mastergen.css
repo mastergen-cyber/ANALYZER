@@ -27,6 +27,7 @@ body {
 
 .actions {
   position: absolute;
+  z-index: 2; /* Выпадающие окна навигации отображаются поверх текста описания. */
   top: 31%;
   left: 7%;
   right: 7%;
