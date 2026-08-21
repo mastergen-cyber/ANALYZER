@@ -376,7 +376,7 @@ body {
      width: размер каждой кнопки независимо друг от друга. */
   .video-buttons {
     --video-pocketoption-y: -10px;
-    --video-roboforex-y: -10px;
+    --video-roboforex-y: -12px;
     --video-pocketoption-width: 60%;
     --video-roboforex-width: 60%;
   }
