@@ -356,7 +356,7 @@ body {
      положительный --video-window-x сдвигает вправо. */
   .video-modal {
     --video-window-x: 0px;
-    --video-window-y: -200px;
+    --video-window-y: -500px;
   }
 
   .program-description {
