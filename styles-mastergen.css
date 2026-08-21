@@ -82,13 +82,23 @@ body {
    остаётся по центру относительно кнопки. */
 .video-wrap {
   position: absolute;
-  right: 0;
+  right: 4%;
   width: 22%;
   --video-button-x: 0px;
   --video-button-y: 0px;
   transform: translate(var(--video-button-x), var(--video-button-y));
 }
 .video { width: 100%; }
+
+/* Пока без действия: кнопка Download сохраняет высоту кнопки «Видео»
+   и привязана к её правому краю. */
+.download {
+  position: absolute;
+  top: 50%;
+  left: 102%;
+  width: 14%;
+  transform: translateY(-50%);
+}
 
 .program-description {
   position: absolute;
@@ -222,6 +232,9 @@ body {
   transform: scale(1.035);
   outline: none;
 }
+
+.download:hover,
+.download:focus-visible { transform: translateY(-50%) scale(1.035); }
 
 .video-modal {
   position: absolute;
@@ -397,6 +410,9 @@ body {
 
 /* Mobile layout: applies only to screens up to 768px wide. */
 @media (max-width: 768px) {
+  /* Download используется только в компьютерной версии. */
+  .download { display: none; }
+
   /* Убирает стандартную голубую вспышку браузера при касании,
      не меняя заданную подсветку самих кнопок. */
   .image-button,
