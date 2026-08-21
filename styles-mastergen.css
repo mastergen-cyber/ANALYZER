@@ -246,11 +246,18 @@ body {
 /* Окно Download рассчитано на исходный макет 1680px: 945 × 430px.
    Проценты сохраняют эти пропорции на меньших компьютерных экранах. */
 .download-modal {
+  /* Настройки окна Download.
+     x/y: смещение вправо/вниз; width/height: размер окна. */
+  --download-modal-x: 0px;
+  --download-modal-y: 0px;
+  --download-modal-width: 56.25%;
+  --download-modal-height: auto;
   position: absolute;
   z-index: 12;
-  left: calc(60% + var(--download-modal-x, 0px));
-  top: calc(48% + var(--download-modal-y, 0px));
-  width: var(--download-modal-width, 56.25%);
+  left: calc(60% + var(--download-modal-x));
+  top: calc(48% + var(--download-modal-y));
+  width: var(--download-modal-width);
+  height: var(--download-modal-height);
   aspect-ratio: 945 / 430;
   transform: translateX(-50%);
   background: url("assets/skindownload.png") center / 100% 100% no-repeat;
@@ -260,7 +267,6 @@ body {
 
 .download-choice {
   position: absolute;
-  width: 42%;
   padding: 0;
   border: 0;
   background: transparent;
@@ -268,8 +274,30 @@ body {
 }
 
 .download-choice img { display: block; width: 100%; height: auto; }
-.download-3000 { top: 10%; right: 4%; }
-.download-analyzer { bottom: 10%; left: 4%; }
+
+/* Правая верхняя кнопка: x — вправо, y — вниз. */
+.download-3000 {
+  --download-3000-x: 0px;
+  --download-3000-y: 0px;
+  --download-3000-width: 42%;
+  --download-3000-height: auto;
+  top: calc(10% + var(--download-3000-y));
+  right: calc(4% - var(--download-3000-x));
+  width: var(--download-3000-width);
+}
+.download-3000 img { height: var(--download-3000-height); }
+
+/* Левая нижняя кнопка: x — вправо, y — вниз. */
+.download-analyzer {
+  --download-analyzer-x: 0px;
+  --download-analyzer-y: 0px;
+  --download-analyzer-width: 42%;
+  --download-analyzer-height: auto;
+  bottom: calc(10% - var(--download-analyzer-y));
+  left: calc(4% + var(--download-analyzer-x));
+  width: var(--download-analyzer-width);
+}
+.download-analyzer img { height: var(--download-analyzer-height); }
 
 .download-choice:hover,
 .download-choice:focus-visible {
