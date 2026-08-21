@@ -396,8 +396,8 @@ body {
      width и height: размер каждой кнопки независимо друг от друга.
      Укажите height в px, если нужно изменить высоту без пропорций. */
   .video-buttons {
-    --video-pocketoption-y: -2px;
-    --video-roboforex-y: -22px;
+    --video-pocketoption-y: -3px;
+    --video-roboforex-y: -24px;
     --video-pocketoption-width: 70%;
     --video-roboforex-width: 70%;
     --video-pocketoption-height:  70%;
