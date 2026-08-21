@@ -284,6 +284,8 @@ body {
   top: var(--video-roboforex-y);
   width: var(--video-roboforex-width, 100%);
 }
+.video-choice:nth-child(1) img { height: var(--video-pocketoption-height, auto); }
+.video-choice:nth-child(2) img { height: var(--video-roboforex-height, auto); }
 
 .video-close {
   position: absolute;
@@ -391,12 +393,15 @@ body {
 
   /* Кнопки выбора видео — только компьютерная версия.
      y: положительное число опускает кнопку, отрицательное — поднимает.
-     width: размер каждой кнопки независимо друг от друга. */
+     width и height: размер каждой кнопки независимо друг от друга.
+     Укажите height в px, если нужно изменить высоту без пропорций. */
   .video-buttons {
     --video-pocketoption-y: -1px;
     --video-roboforex-y: -12px;
     --video-pocketoption-width: 70%;
     --video-roboforex-width: 70%;
+    --video-pocketoption-height: auto;
+    --video-roboforex-height: auto;
   }
 
   .program-description {
