@@ -249,7 +249,7 @@ body {
   /* Настройки окна Download.
      x/y: смещение вправо/вниз; width: размер с сохранением пропорций. */
   --download-modal-x: 0px;
-  --download-modal-y: -10px;
+  --download-modal-y: -30px;
   --download-modal-width: 58%;
   position: absolute;
   z-index: 12;
