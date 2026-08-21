@@ -251,7 +251,7 @@ body {
   --download-modal-x: 0px;
   --download-modal-y: -10px;
   --download-modal-width: 56.25%;
-  --download-modal-height: 200;
+  --download-modal-height: 240;
   position: absolute;
   z-index: 12;
   left: calc(60% + var(--download-modal-x));
