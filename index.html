@@ -43,7 +43,7 @@
           <button class="image-button video" type="button" aria-expanded="false" aria-haspopup="dialog" aria-controls="video-modal" aria-label="Открыть видео">
             <img class="video-image" src="assets/video.png" alt="Video">
           </button>
-          <button class="image-button download" type="button" aria-label="Download">
+          <button class="image-button download" type="button" aria-expanded="false" aria-controls="download-modal" aria-label="Download">
             <img src="assets/download.png" alt="Download">
           </button>
           <section class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Выбор видео" hidden>
@@ -78,6 +78,14 @@
           </div>
         </section>
       </div>
+      <section class="download-modal" id="download-modal" role="dialog" aria-modal="true" aria-label="Скачать программы" hidden>
+        <button class="download-choice download-3000" type="button" aria-label="Download 3000">
+          <img src="assets/down3000.png" alt="Download 3000">
+        </button>
+        <button class="download-choice download-analyzer" type="button" aria-label="Download Analyzer">
+          <img src="assets/downanalyzer.png" alt="Download Analyzer">
+        </button>
+      </section>
     </main>
     <p class="sr-only" id="language-status" aria-live="polite"></p>
     <section class="video-player-modal" role="dialog" aria-modal="true" aria-label="Просмотр видео" hidden>
@@ -107,6 +115,8 @@
       const signupClose = document.querySelector('.signup-close');
       const videoButton = document.querySelector('.video');
       const videoWrap = document.querySelector('.video-wrap');
+      const downloadButton = document.querySelector('.download');
+      const downloadModal = document.querySelector('.download-modal');
       const videoImage = document.querySelector('.video-image');
       const videoModal = document.querySelector('.video-modal');
       const videoChoices = document.querySelectorAll('.video-choice');
@@ -199,6 +209,17 @@
 
       videoClose.addEventListener('click', closeVideo);
 
+      downloadButton.addEventListener('click', () => {
+        const isOpen = !downloadModal.hidden;
+        downloadModal.hidden = isOpen;
+        downloadButton.setAttribute('aria-expanded', String(!isOpen));
+        if (!isOpen) {
+          videoModal.hidden = true;
+          videoButton.setAttribute('aria-expanded', 'false');
+          downloadModal.querySelector('.download-choice').focus();
+        }
+      });
+
       videoChoices.forEach((choice) => {
         choice.addEventListener('click', () => {
           videoModal.hidden = true;
@@ -224,6 +245,11 @@
         if (!videoModal.hidden) closeVideo();
         if (!videoPlayerModal.hidden) closeVideoPlayer();
         if (!signupModal.hidden) closeSignup();
+        if (!downloadModal.hidden) {
+          downloadModal.hidden = true;
+          downloadButton.setAttribute('aria-expanded', 'false');
+          downloadButton.focus();
+        }
         languageMenu.hidden = true;
         languageToggle.setAttribute('aria-expanded', 'false');
       });
@@ -290,6 +316,10 @@
         if (!videoWrap.contains(event.target)) {
           videoModal.hidden = true;
           videoButton.setAttribute('aria-expanded', 'false');
+        }
+        if (!downloadButton.contains(event.target) && !downloadModal.contains(event.target)) {
+          downloadModal.hidden = true;
+          downloadButton.setAttribute('aria-expanded', 'false');
         }
       });
 
