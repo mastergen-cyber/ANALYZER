@@ -397,7 +397,7 @@ body {
      Укажите height в px, если нужно изменить высоту без пропорций. */
   .video-buttons {
     --video-pocketoption-y: -1px;
-    --video-roboforex-y: -10px;
+    --video-roboforex-y: -14px;
     --video-pocketoption-width: 70%;
     --video-roboforex-width: 70%;
     --video-pocketoption-height:  70%;
