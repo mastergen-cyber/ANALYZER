@@ -94,11 +94,12 @@ body {
    и привязана к её правому краю. */
 .download {
   position: absolute;
-  top: 50%;
-  left: 102%;
-  width: 14%;
+  top: calc(50% + var(--download-y, 0px));
+  left: calc(102% + var(--download-x, 0px));
+  width: var(--download-width, 14%);
   transform: translateY(-50%);
 }
+.download img { height: var(--download-height, auto); }
 
 .program-description {
   position: absolute;
@@ -387,6 +388,16 @@ body {
   }
 
   .video-close { display: none; }
+
+  /* Download — только компьютерная версия.
+     x: положительное число сдвигает вправо, y: вниз.
+     width и height можно задавать независимо, например 12% и 40px. */
+  .download {
+    --download-x: 0px;
+    --download-y: 0px;
+    --download-width: 14%;
+    --download-height: auto;
+  }
 
   /* Независимо от ширины кнопки её центр совпадает с центром «Видео». */
   .video-choice { justify-self: center; }
