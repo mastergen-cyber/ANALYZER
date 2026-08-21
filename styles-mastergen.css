@@ -287,7 +287,7 @@ body {
 .download-analyzer {
   --download-analyzer-x: 0px;
   --download-analyzer-y: 0px;
-  --download-analyzer-width: 42%;
+  --download-analyzer-width: 30%;
   bottom: calc(10% - var(--download-analyzer-y));
   left: calc(4% + var(--download-analyzer-x));
   width: var(--download-analyzer-width);
