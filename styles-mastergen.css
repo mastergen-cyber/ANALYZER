@@ -395,8 +395,8 @@ body {
   .video-buttons {
     --video-pocketoption-y: -1px;
     --video-roboforex-y: -12px;
-    --video-pocketoption-width: 60%;
-    --video-roboforex-width: 60%;
+    --video-pocketoption-width: 50%;
+    --video-roboforex-width: 50%;
   }
 
   .program-description {
