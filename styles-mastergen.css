@@ -95,7 +95,7 @@ body {
 .download {
   /* Настройки Download: меняйте эти значения.
      x: вправо/влево, y: вниз/вверх, width и height: размер кнопки. */
-  --download-x: 22px;
+  --download-x: 20px;
   --download-y: 0px;
   --download-width: 18%;
   --download-height: auto;
