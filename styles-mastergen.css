@@ -358,7 +358,12 @@ body {
   .video-modal {
     --video-window-x: 0px;
     --video-window-y: -600px;
+    /* На компьютере показываются только кнопки, без фона окна. */
+    background: transparent;
+    box-shadow: none;
   }
+
+  .video-close { display: none; }
 
   .program-description {
     max-height: 42%;
