@@ -84,7 +84,7 @@ body {
   position: absolute;
   right: 4%;
   width: 22%;
-  --video-button-x: -4px;
+  --video-button-x: -3px;
   --video-button-y: 0px;
   transform: translate(var(--video-button-x), var(--video-button-y));
 }
