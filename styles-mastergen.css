@@ -351,6 +351,14 @@ body {
 
 /* Только для компьютера: длинный текст прокручивается внутри своего блока. */
 @media (min-width: 769px) {
+  /* Окно выбора видео — только компьютерная версия.
+     Отрицательный --video-window-y опускает окно ниже;
+     положительный --video-window-x сдвигает вправо. */
+  .video-modal {
+    --video-window-x: 0px;
+    --video-window-y: -30px;
+  }
+
   .program-description {
     max-height: 42%;
     overflow-y: auto;
