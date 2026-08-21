@@ -380,7 +380,7 @@ body {
      y: положительное число опускает кнопку, отрицательное — поднимает.
      width: размер каждой кнопки независимо друг от друга. */
   .video-buttons {
-    --video-pocketoption-y: -10px;
+    --video-pocketoption-y: -8px;
     --video-roboforex-y: -12px;
     --video-pocketoption-width: 60%;
     --video-roboforex-width: 60%;
