@@ -285,7 +285,7 @@ body {
 
 /* Левая нижняя кнопка: x — вправо, y — вниз. */
 .download-analyzer {
-  --download-analyzer-x: 0px;
+  --download-analyzer-x: -10px;
   --download-analyzer-y: 30px;
   --download-analyzer-width: 30%;
   bottom: calc(10% - var(--download-analyzer-y));
