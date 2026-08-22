@@ -277,7 +277,7 @@ body {
 .download-3000 {
   --download-3000-x: 0px;
   --download-3000-y: -30px;
-  --download-3000-width: 25%;
+  --download-3000-width: 27%;
   top: calc(10% + var(--download-3000-y));
   right: calc(4% - var(--download-3000-x));
   width: var(--download-3000-width);
@@ -287,7 +287,7 @@ body {
 .download-analyzer {
   --download-analyzer-x: -12px;
   --download-analyzer-y: 30px;
-  --download-analyzer-width: 25%;
+  --download-analyzer-width: 27%;
   bottom: calc(10% - var(--download-analyzer-y));
   left: calc(4% + var(--download-analyzer-x));
   width: var(--download-analyzer-width);
